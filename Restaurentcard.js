@@ -2,12 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import EvilIcons from "react-native-vector-icons/EvilIcons"
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Restaurent({ imgUrl, title,Rating, Type, Address }) {
+
+
+    const navigation = useNavigation();
+
     return (
         <View>
-            <TouchableOpacity style={styles.design}>
+            <TouchableOpacity style={styles.design} onPress={()=>navigation.navigate('Screen1')}>
                 <Image source={{ uri: imgUrl }}
                     style={{ width: 250, height: 250, borderRadius: 10, }}
                 />
